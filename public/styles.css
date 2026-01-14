@@ -86,11 +86,6 @@ header a {
 }
 
 
-@media (max-width: 900px) {
-    .content {
-        grid-template-columns: 1fr;
-    }
-}
 
 
 
@@ -104,6 +99,16 @@ header {
 header .hero-inner {
     text-align: center;
 }
+
+.scroll-arrow {
+    position: relative;  /* needed for z-index */
+  z-index: 20;         /* above overlay */
+  font-size: 26px;
+  display: inline-block;
+  animation: bounceDuh 16s cubic-bezier(.4,0,.2,1) infinite;
+  opacity: 0.85;
+}
+
 
 
 .social-links {
@@ -145,18 +150,62 @@ header .hero-inner {
     object-fit: cover;
 }
 
+.fade-overlay {
+  position: fixed;      /* stay in place while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* allow clicks through it */
+  z-index: 10;          /* above content like arrow if needed, adjust */
+  background: linear-gradient(
+    to bottom,
+    white 0%,           /* full white at top */
+    rgba(255, 255, 255, 0) 20%,  /* fade to transparent */
+    rgba(255, 255, 255, 0) 80%,  /* middle transparent */
+    white 100%          /* full white at bottom */
+  );
+}
+
 footer {
     text-align: center;
     margin: 40px 0 20px 0;
     font-size: 14px;
     color: #555;
+    position: relative;  /* needed for z-index */
+    z-index: 31;
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(8px);
-  }
+
+@keyframes floatArrow {
+  0%   { transform: translateY(0);    opacity: .7; }
+  50%  { transform: translateY(12px); opacity: 1; }
+  100% { transform: translateY(0);    opacity: .7; }
 }
+
+@keyframes bounceDuh {
+  0%   { transform: translateY(0); }
+  10%  { transform: translateY(40px); }  /* doubled jump */
+  20%  { transform: translateY(0); }
+  30%  { transform: translateY(40px); }
+  40%  { transform: translateY(0); }
+  50%  { transform: translateY(40px); }
+  60%  { transform: translateY(0); }
+  70%  { transform: translateY(24px); }  /* secondary smaller bounce */
+  80%  { transform: translateY(0); }
+  90%  { transform: translateY(24px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes floatArrow {
+  0%   { transform: translateY(0); opacity: .7; }
+  50%  { transform: translateY(12px); opacity: 1; }
+  100% { transform: translateY(0); opacity: .7; }
+}
+
+@media (max-width: 900px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+}
+
