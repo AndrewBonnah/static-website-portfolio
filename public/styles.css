@@ -112,12 +112,16 @@ header a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    gap: 20px; /* match header spacing */
 }
+
 
 .content img {
     width: 100%;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+    justify-self: end; /* mirror header push */
 }
+
 
 .text h2 {
     margin-top: 0;
@@ -127,6 +131,9 @@ header a {
 
 
 
+.text {
+    justify-self: start; /* mirror header push */
+}
 
 .text p {
     line-height: 1.6;
