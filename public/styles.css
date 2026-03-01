@@ -120,6 +120,7 @@ header a {
     width: 100%;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
     justify-self: end; /* mirror header push */
+    border-radius: 15px;
 }
 
 
@@ -212,6 +213,7 @@ footer {
     margin: 40px 0 20px 0;
     z-index: 100;
 }
+
 
 /* in hover state mouse click to URL Linkedin
     and hover state click */
