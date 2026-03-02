@@ -6,20 +6,62 @@
   <h3>AI vs Human Text: Quick Analysis</h2>
 
   <p>
-    <a href="https://www.kaggle.com/writeups/andrewbonnah/gpt-2-generated-20000-sample-texts-database" target="_blank">Last time I generated 20,000 GPT-2 text sequences</a> 
+    Last time I <a href="https://www.kaggle.com/writeups/andrewbonnah/gpt-2-generated-20000-sample-texts-database" target="_blank">generated 20,000 GPT-2 text sequences</a> 
     and compared them to other AI and human-written corpora, making this image:
   </p>
 
   <img src="simple_site_assets/first-analysis.png" alt="LDV versus SLV">
   <p>
-    <i>Image from previous analysis, placing our dataset amongst other known AI and Human datasets.</i>
+    <i>Image from previous analysis, Lexical Diversity Variability against Sentence Length Variability (aka the standard deviations), then placing our own dataset amongst other known AI and Human datasets.</i>
   </p>
 
   <p>
-    Next, we're taking a closer look at the details of AI vs human text using <strong>token-level divergence measures</strong>. 
-    Instead of global stats like lexical diversity or sentence length, these metrics check differences in individual word choices, 
+    Next, we're going to try and recreate an "AI-checker" you may find online by comparing AI vs human text using <strong>token-level divergence measures</strong>, which we'll get more into later... 
+    <br><br>
+    But first I need to dispell a "myth" that seems to exist: that you can't get into AI/ML/Deep Learning, whatever jargon you want to call it, if you are a junior developer.
+    <br><br>
+    I'm currently working on reading Deep Learning with Python  <a href="https://deeplearningwithpython.io/chapters/" target="_blank"><strong>available for free online</strong></a> by Fran&ccedil;ois Chollet (inventor of Keras) and Matthew Watson, and I should mention 3Blue1Brown <strong><a href="https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi" target="_blank">videos on neural networks</a></strong> are another source of my inspiration for this project.
+    <br><br>
+    There seems to be a lesson, and I see why it's taken hold to be fair, after all I don't have a coding job, that ML jobs are for senior developers, and I don't see why this is the consensus.
+    <br><br>
+    After all, to quote Fran&ccedil;ois and Matthew, "Machine learning models are all about finding appropriate representations for their input data--transformations of the data that make it more amenable to the task at hand." And you really <i>don't</i> need <i>any</i> degree for that... and these old heads don't know heads from tails when it comes to AI text, images or sound, we 'young bucks' on the other hand know it in a blink of an eye... so why should they be making the tools we use?
+    <br><br>
+    You may be thinking "he's <i>not</i> a language researcher," and you're right I am <i>not exactly</i> a language researcher, but I have done similar language projects in the past like a rhyme data base, and being a language researcher really is just a matter of spending money on a degree and this <i>should</i> comes down to a matter of <i>relatively</i> simple statistics... and I achieved a <strong>very respectable</strong> 4 in AP Statistics &copy;.....
+    <br><br> This is to say we're going to do it anyway and I don't care....
+    <br><br>
+    So <strong>what are</strong> token-level divergence measures? <br><br>
+    Well instead of global stats (like lexical diversity or sentence length, or their respective standard deviations) these metrics check differences in individual word choices, 
     sequences, and phrasing.
+    <br><br>
+    So why are <i>these</i> the hammer of AI checkers? (I guess the nail is the checking idk)<br> <br> 
+    It goes back to how AI's like ChatGPT work, and makes me go back to a time I regret... *fade to white,* <br><br>
+    I have this one friend who's familiy is maybe<i>a couple of income brackets above mine,</i> and one time
+    the dad was talking to me and said something like "they're really just predicting the next word," and I didn't say that
+    was <i>stupid</i> exactly but instead something <i>stupid</i> like "Errrrmmm... that's not exactly true they're doing a lot more than that with the thinking models..."
+    <br><br>
+    But at the end of the day, as I should've gone to class more, cause he was <strong>100%</strong> right<i> they are just predicting the next word</i> and I got <i>"schooled"</i> so yes, I should've respected his unc title more...<br><br>
+    Basically, <strong>token-level divergence measures</strong> aren't one thing they are a bunch of measures people made up to try and find patterns, or in other words they try to <i>order chaos.</i>
   </p>
+  <p>
+    ... <strong><i>tomorrow</i></strong> I start with step 1 for now I <i>sleep</i>.
+  </p>
+
+    <ul>
+    <li>
+         Step 1.)<br>Load sample databases and create a way to do unique sampling rounds (ie load 3 databases, randomly select 10,000, maybe stratified or what we're comparing is different weights and shapes...)
+    </li>
+    
+    <li>
+         Step 2.)<br>Compute measures
+    </li>
+
+    <li>
+         Step 3.)<br>Plot with a heat map cause I want to make one this kinda makes sense though human vs not
+    </li>
+    <li>
+         Step 4.)<br>Analyze
+    </li>
+  </ul>
 
   <p>
     Here are the main measures I'll be gathering:
