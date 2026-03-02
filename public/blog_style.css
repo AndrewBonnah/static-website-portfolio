@@ -1,0 +1,61 @@
+/* Back link */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 40px;
+    text-decoration: none;
+    color: #0066ff;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* SIMPLE WRITING COLUMN */
+
+.writing {
+    max-width: 720px;          /* readable line length */
+    margin: 120px auto 80px;   /* space from header */
+    padding: 0 10px;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Headings */
+.writing h2 {
+    font-size: 28px;
+    font-weight: normal;
+    margin: 60px 0 25px 0;
+}
+
+/* Paragraphs */
+.writing p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 18px 0;
+    color: #000;
+}
+
+/* Centered images you can drop anywhere */
+.writing img {
+    display: block;
+    max-width: 100%;
+    margin: 50px auto;
+    border-radius: 15px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional subtle divider */
+.writing hr {
+    border: none;
+    height: 1px;
+    background: #e5e5e5;
+    margin: 70px 0;
+}
+
+/* Mobile tuning */
+@media (max-width: 900px) {
+    .writing {
+        margin-top: 60px;
+    }
+}
