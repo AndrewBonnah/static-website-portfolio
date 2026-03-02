@@ -52,7 +52,27 @@
     background: #e5e5e5;
     margin: 70px 0;
 }
+/* Styled unordered lists in writing section */
+.writing ul {
+    list-style-type: disc;       /* standard bullet points */
+    padding-left: 40px;          /* align nicely with text */
+    margin: 20px 0;              /* space above and below the list */
+}
 
+.writing ul li {
+    font-size: 16px;             /* match paragraph font size */
+    line-height: 1.7;            /* same as paragraphs for consistency */
+    margin-bottom: 15px;         /* space between items */
+    color: #000;                 /* match paragraph text color */
+}
+
+/* Italics inside lists (for intuition/notes) */
+.writing ul li i {
+    display: block;              /* puts intuition on its own line */
+    font-style: italic;
+    color: #555;                 /* slightly lighter for secondary info */
+    margin-top: 5px;
+}
 /* Mobile tuning */
 @media (max-width: 900px) {
     .writing {

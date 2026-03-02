@@ -2,21 +2,53 @@
 <div class="writing">
   <a href="/" class="back-link">&#8617; Back</a>
 
-  <h2>AI vs Human Text: Quick Analysis</h2>
+  <h3>AI vs Human Text: Quick Analysis</h2>
 
   <p>
-    <a href="https://www.kaggle.com/datasets/andrewbonnah/gpt2-medium-20000-entries-500-tokens-each/data" target="_blank">Last time I generated 20,000 GPT-2 text sequences</a> 
-    and compared them to human-written corpora. This time, we're keeping it simple and looking at two things: 
-    <strong>lexical diversity variability</strong> (how varied the words are) and <strong>sentence-length variability</strong> (how sentences flow). 
+    <a href="https://www.kaggle.com/writeups/andrewbonnah/gpt-2-generated-20000-sample-texts-database" target="_blank">Last time I generated 20,000 GPT-2 text sequences</a> 
+    and compared them to other AI and human-written corpora, making this image:
   </p>
 
   <img src="simple_site_assets/first-analysis.png" alt="LDV versus SLV">
   <p>
-    <i>Image from earlier cursory analysis, placing our dataset amongst other known AI vs Human datasets.</i>
+    <i>Image from previous analysis, placing our dataset amongst other known AI and Human datasets.</i>
   </p>
 
   <p>
-    The idea is simple: human text tends to sit in a narrower range, AI text spreads out more, and this shows why global metrics alone 
-    aren't enough to tell AI from human. Think of this as a quick map before diving deeper.
+    Next, we're taking a closer look at the details of AI vs human text using <strong>token-level divergence measures</strong>. 
+    Instead of global stats like lexical diversity or sentence length, these metrics check differences in individual word choices, 
+    sequences, and phrasing.
   </p>
+
+  <p>
+    Here are the main measures I'll be gathering:
+  </p>
+
+  <ul>
+    <li>
+      <strong>KL Divergence (Kullback-Leibler)</strong>: How surprising AI text looks if you assume it was written like human text. 
+      <i>"If I think this text is human, how wrong am I?"</i>
+    </li>
+    <li>
+      <strong>Jensen-Shannon Divergence (JSD)</strong>: A symmetric, more stable version of KL. Always finite, easier to interpret, 
+      and common in NLP research. <i>"How far apart are human and AI word-choice patterns?"</i>
+    </li>
+    <li>
+      <strong>Perplexity Gap</strong>: Measures how "strange" AI text looks to a language model trained on human text. 
+      <i>"Does this text look easy or unusual to a human-trained model?"</i>
+    </li>
+    <li>
+      <strong>N-gram Divergence</strong>: Looks at sequences of words (bigrams, trigrams) to see patterns in phrasing. 
+      <i>AI often repeats certain patterns, while humans vary more naturally.</i>
+    </li>
+    <li>
+      <strong>Burstiness / Repetition Metrics</strong>: Measures token reuse, phrase recurrence, and long-range repetition. 
+      <i>"Does the text get stuck saying the same thing in slightly different ways?"</i>
+    </li>
+  </ul>
+
+  <p>
+    Where global measures failed, token-level divergence may reveal the subtle stylistic differences that make AI and human text distinct.
+  </p>
+
 </div>
