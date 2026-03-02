@@ -6,6 +6,9 @@
     text-decoration: none;
     color: #0066ff;
     font-weight: bold;
+    margin: 50px 0 0px 50px;
+    font-family: "Roboto", sans-serif;
+
 }
 
 .back-link:hover {
@@ -16,7 +19,7 @@
 
 .writing {
     max-width: 720px;          /* readable line length */
-    margin: 120px auto 80px;   /* space from header */
+    margin: 0px auto 80px;   /* space from header */
     padding: 0 10px;
     font-family: "Roboto", sans-serif;
 }
