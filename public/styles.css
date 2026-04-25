@@ -18,6 +18,8 @@ header {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 20px;
+    /* position: fixed; */
+    /* #z-index: -100; */
 }
 
 header h1 {
@@ -67,7 +69,7 @@ header a {
     color: #000;
     font-weight: bold;
     animation: colorFade 1.2s ease forwards;
-    animation-delay: calc(var(--i) * .8s);
+    animation-delay: calc(var(--i) * .2s);
 }
 
 .social-links.loaded a {
@@ -86,7 +88,7 @@ header a {
     justify-self: start;
     align-self: start;
     animation: colorFade 1.2s ease forwards;
-    animation-delay: calc(var(--i) * .8s);
+    animation-delay: calc(var(--i) * .2s);
 }
 
 /* Animate color from black to blue */
@@ -171,7 +173,7 @@ header a:hover,
 }
 
 /* FADE OVERLAY */
-.fade-overlay {
+/* .fade-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -184,7 +186,7 @@ header a:hover,
         rgba(255, 255, 255, 0) 80%,
         #fff 100%
     );
-}
+} */
 
 /* FOOTER */
 footer {

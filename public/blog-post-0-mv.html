@@ -102,4 +102,14 @@
     Where global measures failed, token-level divergence may reveal the subtle stylistic differences that make AI and human text distinct.
   </p>
 
+  <p>
+    To start let's use just the df I created using GPT-2 (for now.)<br><br>
+    The df already contains columns like the specific model version, parameters, input_tokens, prompt, response, and even response time (all be it for the batch) <br><br>
+    The first columns I want to add is simply number of chars, num of words, num of special chars, and number of sentences <br><br>
+    To do this I defined some panda's functions to split on " ", grab special chars with regex, and split on "."
+    <br><br>
+    Next I want to extract nlp features using en_core_md for mean token vectors, as well as for POS tags, entities, and dependencies.
+    <br><br>
+
+  </p>
 </div>
