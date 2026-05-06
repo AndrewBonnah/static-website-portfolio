@@ -28,7 +28,7 @@ header h1 {
     font-weight: normal;
     justify-self: end;
     align-self: end;
-    font-weight: bolder;
+    /* font-weight: bolder; */
 }
 
 header h3 {
